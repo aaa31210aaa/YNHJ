@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <cn.bingoogolapple.badgeview.BGABadgeLinearLayout
+        android:id="@+id/notify_badge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:badge_dragable="false"
+        app:badge_gravity="rightTop"
+        app:badge_padding="@dimen/qb_px_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item1"
+            style="@style/TextStyle"
+            android:text="标题"
+            android:maxEms="18"
+            android:singleLine="true"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:id="@+id/item2"
+            style="@style/TextStyle"
+            android:text="日期" />
+
+    </cn.bingoogolapple.badgeview.BGABadgeLinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcombg"
+    tools:context="ui.Welcome">
+
+    <TextView
+        android:id="@+id/main_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcom_main_title"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/qb_px_100"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/welcom_main_size"/>
+
+
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/btn_splash_shape"
+        android:text="Button"
+        android:visibility="invisible"
+        tools:ignore="RtlCompat" />
+
+</RelativeLayout>

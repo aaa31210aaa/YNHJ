@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ui.NotifyDetail">
+
+    <include layout="@layout/common_title"></include>
+
+    <TextView
+        android:id="@+id/notify_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:gravity="center"
+        android:maxEms="15"
+        android:paddingLeft="@dimen/qb_px_10"
+        android:paddingRight="@dimen/qb_px_10"
+        android:text="33"
+        android:textColor="@color/main_color"
+        android:textSize="@dimen/qb_px_15" />
+
+    <TextView
+        android:id="@+id/notify_detail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notify_detail_title"
+        android:layout_centerHorizontal="true"
+        android:text="333" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/notify_detail_date">
+
+        <TextView
+            android:id="@+id/notify_detail_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/qb_px_10"
+            android:text="333" />
+    </ScrollView>
+</RelativeLayout>

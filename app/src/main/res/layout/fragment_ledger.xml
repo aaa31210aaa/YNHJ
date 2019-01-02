@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tab.Ledger">
+
+    <include layout="@layout/fragment_common_title"></include>
+
+    <include layout="@layout/search_view"></include>
+
+    <include layout="@layout/refresh_rv"></include>
+    <!--<LinearLayout-->
+    <!--android:id="@+id/laboratory_title"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/search_rl"-->
+    <!--android:gravity="center"-->
+    <!--android:background="@color/colorAccent"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:textSize="@dimen/qb_px_10"-->
+    <!--android:text="矿块(工作面)"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:textSize="@dimen/qb_px_10"-->
+    <!--android:text="矿石类型"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:textSize="@dimen/qb_px_10"-->
+    <!--android:text="品位(g/t)"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:textSize="@dimen/qb_px_10"-->
+    <!--android:text="金属量(kg)"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:textSize="@dimen/qb_px_10"-->
+    <!--android:text="矿石量(t)"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--</LinearLayout>-->
+
+
+</RelativeLayout>

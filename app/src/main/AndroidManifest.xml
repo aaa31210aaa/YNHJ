@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.project.dimine.ynhj">
+
+    <!-- Required -->
+    <permission
+        android:name="com.example.administrator.ynhj.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required -->
+    <uses-permission android:name="com.example.administrator.ynhj.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 用于写入缓存数据到扩展存储卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/jpush_notification_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/jpush_notification_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="1bcf83cdd7eaf099585bfc89aa3711f5" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 替换原生极光推送接收器 -->
+        <receiver
+            android:name="utils.MyReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.example.administrator.ynhj" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.project.dimine.ynhj.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.Welcome"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ui.Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.ModifyPwd"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.About"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.Notify"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.NotifyDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.ProductionPanel"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.OneDayDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="ui.ChooseDestination"
+            android:screenOrientation="portrait" />
+        <activity android:name="ui.FillInMineralTickets" />
+        <activity android:name="ui.TicketsList" />
+        <activity android:name="ui.LaboratoryResult" />
+        <activity android:name="ui.XkdryFillInTickets" />
+        <activity android:name="ui.workbench.Dbrw" />
+        <activity android:name="ui.workbench.Hyjg" />
+        <activity android:name="ui.workbench.Gzdbdj" />
+        <activity android:name="ui.workbench.Swwtdj" />
+        <activity android:name="ui.workbench.Aqjcwtdj" />
+        <activity android:name="ui.workbench.LswtdjList" />
+        <activity android:name="ui.workbench.Aqyhgl" />
+        <activity android:name="ui.workbench.KcsjTodo" />
+        <activity android:name="ui.workbench.XkdryTodo" />
+        <activity android:name="ui.workbench.GzdbdjList" />
+        <activity android:name="ui.workbench.SwwtList" />
+        <activity android:name="ui.workbench.AqjcwtList" />
+        <activity android:name="ui.workbench.LswtDj"></activity>
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+        <activity
+            android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/PhotoPickerTheme" />
+    </application>
+
+</manifest>

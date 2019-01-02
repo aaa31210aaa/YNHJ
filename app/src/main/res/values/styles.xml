@@ -1,0 +1,84 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--主界面tab切换卡样式-->
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <!--<item name="tabPaddingStart">@dimen/qb_px_10</item>-->
+        <item name="tabTextColor">@color/tabtv_unselect</item>
+        <!--<item name="tabPaddingEnd">@dimen/qb_px_10</item>-->
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Textinputlayoutstyle">
+        <item name="android:textColorHint">@color/gray_normal</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <!-- 登陆check框 -->
+    <style name="CustomCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+
+    <!--加载窗口的样式-->
+    <style name="loadingDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/qb_px_5</item>
+    </style>
+
+    <style name="workbench_editext">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:background">@drawable/editext_bk</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/qb_px_5</item>
+        <item name="android:textSize">@dimen/editext_size</item>
+    </style>
+
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/qb_px_10</item>
+    </style>
+
+    <declare-styleable name="ShimmerFrameLayout">
+        <attr name="shimmer_duration" format="integer"></attr>
+    </declare-styleable>
+
+    <!--照片选择页面样式-->
+    <style name="PhotoPickerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/photopicker_background</item>
+        <item name="actionMenuTextAppearance">@style/ActionMenuTextStyle</item>
+        <!--<item name="actionBarTheme">@style/actionBarTheme</item>-->
+        <!--<item name="actionBarPopupTheme">@style/actionBarPopupTheme</item>-->
+    </style>
+
+    <!-- 设置ActionBar菜单字体 -->
+    <style name="ActionMenuTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="android:textSize">@dimen/action_text_size</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

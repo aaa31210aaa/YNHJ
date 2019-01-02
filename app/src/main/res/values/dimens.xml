@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="welcom_main_size">22sp</dimen>
+    <dimen name="card_tv_size">21sp</dimen>
+    <dimen name="welcom_size">20sp</dimen>
+    <dimen name="title_size">15sp</dimen>
+    <dimen name="ring_size">@dimen/qb_px_11</dimen>
+    <dimen name="editext_size">13sp</dimen>
+</resources>

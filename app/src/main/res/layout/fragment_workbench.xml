@@ -1,0 +1,236 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="tab.Workbench">
+
+    <include layout="@layout/common_title_noback"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/workbench_dbrw"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/todo_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench1"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/workbench_hyjg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/assay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench2"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/workbench_gzdbdj"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench3" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/dbdj_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench3"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/workbench_swwtdj"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench4" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/swwtdj_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench4"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/workbench_aqjcwtdj"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench5" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/aqjcwt_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench5"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/workbench_lswtdj"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench6" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/lsgl_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench6"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
+            >
+
+            <ImageView
+                android:id="@+id/workbench_aqyhgl"
+                android:layout_width="@dimen/qb_px_160"
+                android:layout_height="@dimen/qb_px_50"
+                android:layout_margin="@dimen/qb_px_10"
+                android:background="@color/workbench7" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:src="@drawable/aqyhgl_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/workbench7"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

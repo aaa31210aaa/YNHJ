@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ui.workbench.KcsjTodo">
+
+    <include layout="@layout/common_title_noback"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_green"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/kcsj_dateimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/kcsj_dateimg" />
+
+        <TextView
+            android:id="@+id/tickets_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/kcsj_dateimg"
+            android:text="2018-11-16"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_blue"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/kcsj_chimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/kcsj_chimg" />
+
+        <TextView
+            android:id="@+id/tickets_ch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/kcsj_chimg"
+            android:text="15号"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_orange"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/kcsj_weizhiimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/kcsj_weizhiimg" />
+
+        <TextView
+            android:id="@+id/tickets_weizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/kcsj_weizhiimg"
+            android:text="1604/50-52/KT52-8/10-40"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:shimmer_duration="1500">
+
+        <TextView
+            android:id="@+id/tickets_xkd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="供硫化矿堆4#"
+            android:textColor="@color/red"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</LinearLayout>

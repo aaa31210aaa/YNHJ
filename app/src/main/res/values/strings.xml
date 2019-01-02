@@ -1,0 +1,195 @@
+<resources>
+    <string name="app_name">北衙矿业</string>
+    <!--权限提示-->
+    <string name="permission_camera">App扫码需要用到拍摄权限</string>
+    <string name="permission_external_storage">App需要用到读写权限</string>
+    <string name="permission_title">权限设置</string>
+    <string name="permission_tips">没有该权限，此功能可能无法正常使用。打开应用设置以修改应用权限</string>
+    <!--欢迎登陆页面-->
+    <!--<string name="welcom_main_title">云南黄金矿业集团股份有限公司</string>-->
+    <string name="welcom_main_title">鹤庆北衙矿业有限公司</string>
+    <string name="welcom_title">鹤庆北衙矿业有限公司</string>
+    <string name="account_etv_hint">请输入账号</string>
+    <string name="pwd_etv_hint">请输入密码</string>
+    <string name="login_btn_tv">登陆</string>
+    <string name="account_no_empty">账号不能为空</string>
+    <string name="pwd_no_empty">密码不能为空</string>
+    <string name="account_or_pwd_err">账号或者密码错误</string>
+    <string name="loading_write">登陆中...</string>
+    <string name="click_agin">再按一次退出应用</string>
+
+    <!--首页-->
+    <string name="home_title">首页</string>
+    <string name="sckb">生产看板</string>
+    <string name="tzgg">通知公告</string>
+    <string name="dbsy">待办事宜</string>
+    <string name="hyjg">化验结果</string>
+
+    <!--工作台-->
+    <string name="workbench_title">工作台</string>
+    <string name="workbench1">待办任务</string>
+    <string name="workbench2">化验结果</string>
+    <string name="workbench3">工作督办登记</string>
+    <string name="workbench4">三违问题登记</string>
+    <string name="workbench5">安全检查问题登记</string>
+    <string name="workbench6">6S问题登记</string>
+    <string name="workbench7">安全隐患管理</string>
+    <!--任务-->
+    <string name="task_title">任务</string>
+
+    <!--台帐-->
+    <string name="ledger_title">台帐</string>
+
+    <!--我的-->
+    <string name="mine_title">我的</string>
+    <string name="xgmm">修改密码</string>
+    <string name="jcbb">检查版本</string>
+    <string name="qkhc">清空缓存</string>
+    <string name="gy">关于</string>
+    <string name="zx">注销</string>
+    <string name="mine_cancellation_dialog_title">注销</string>
+    <string name="mine_cancellation_dialog_content">请问是否要注销此账号</string>
+    <string name="mine_cancellation_dialog_btn1">取消</string>
+    <string name="mine_cancellation_dialog_btn2">确定</string>
+    <string name="clearcache">请问是否清空缓存</string>
+    <!--关于-->
+    <string name="bah">Copyright ©2011-2018 云南黄金矿业集团股份有限公司</string>
+    <string name="about_jj">      云南黄金矿业集团股份有限公司，原名云南地矿资源股份有限公司,于2001年8月成立，注册资本4.65亿元，是云南省地质矿产勘查开发局在推进企业化改革中，整合优良资产、精干队伍而组建的股份制矿业企业。公司主营业务为黄金和有色金属资源的勘查、开采、选冶、加工、贸易等，黄金资源储备占云南省的三分之一，黄金产量占云南省的一半以上，位列中国黄金查明资源储量五大企业、中国黄金矿产金十大企业和中国黄金销售收入十大企业，是上海黄金交易所综合类优秀会员。旗下“滇金”品牌是中国黄金行业知名品牌。</string>
+    <string name="official_network">官网主页地址</string>
+    <string name="network_add">http://www.ygmg.net/</string>
+    <string name="tel_num">电话号码</string>
+    <string name="gywm">关于我们</string>
+    <!--修改密码-->
+    <string name="jmm">旧密码</string>
+    <string name="xmm">新密码</string>
+    <string name="zcqr">再次确认</string>
+    <string name="xsmm">显示密码</string>
+    <string name="modify_title">修改密码</string>
+    <!--通知公告-->
+    <string name="notify_title">通知公告</string>
+    <string name="input_search">请输入关键字搜索</string>
+    <string name="nodata">暂无数据</string>
+
+    <!--生产看板-->
+    <string name="productionpanel_title">采矿车间矿量及剥离统计表</string>
+    <string name="ck">采矿</string>
+    <string name="pw">品位</string>
+    <string name="kl">矿量</string>
+    <string name="jsl">金属量</string>
+    <string name="jjcs">坚基(车数)</string>
+    <string name="tj">万m³</string>
+    <string name="ljtj">累计(万m³)</string>
+    <string name="ljck">累计采矿</string>
+    <string name="bll">剥离量</string>
+    <string name="xcgk_2000">计划2000t选厂供矿</string>
+    <string name="ljgk_2100">2100t累计供矿</string>
+    <string name="xcgk_4kt">计划4kt选厂供矿</string>
+    <string name="ljgk_4000">4000t累计供矿</string>
+    <string name="xcgk_3kt">计划3kt选厂供矿</string>
+    <string name="ljgk_3000">3000t累计供矿</string>
+    <string name="ljgk_9100">9100t累计供矿</string>
+    <string name="onedayinfo">一天的详细数据</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--待办事宜-->
+    <string name="todo_title">待办事宜</string>
+    <string name="choose_destination_title">目的地选择</string>
+    <string name="ksptb_title">矿石票填报</string>
+    <string name="kspsj_title">矿石票数据</string>
+    <string name="ksplist_title">矿石票列表</string>
+    <string name="card1_tv">供2100t选厂</string>
+    <string name="card2_tv">供3000T选厂</string>
+    <string name="card3_tv">供4000t选厂</string>
+    <string name="card4_tv">供硫化矿堆2#高</string>
+    <string name="card5_tv">供硫化矿堆2#低</string>
+    <string name="card6_tv">供硫化矿堆3#</string>
+    <string name="card7_tv">铅矿堆</string>
+    <string name="card8_tv">供新储备上堆</string>
+
+    <string name="date">日期</string>
+    <string name="ch">车号</string>
+    <string name="xkd">卸矿点</string>
+    <string name="taijie">台阶</string>
+    <string name="kantanxian">勘探线</string>
+    <string name="kuangti">矿体</string>
+    <string name="kuangkuai">矿块</string>
+    <string name="Aupinwei">Au品位</string>
+    <string name="Fepinwei">Fe品位</string>
+    <string name="Agpinwei">Ag品位</string>
+    <string name="Cupinwei">Cu品位</string>
+    <string name="fapiaoyuan">发票员</string>
+    <string name="heji">合计</string>
+    <string name="save">保存</string>
+    <string name="save_success">保存成功</string>
+    <string name="submit">确认</string>
+    <string name="submit_success">确认成功</string>
+
+    <!--化验结果查询-->
+    <string name="laboratoryresult_title">化验结果查询</string>
+    <string name="query">查询</string>
+    <string name="laboratoryresult_input_search">请搜索化验结果</string>
+    <string name="jcbh">检测编号</string>
+    <string name="yybh">原样编号</string>
+    <string name="Auys">Au(10*-6)</string>
+    <string name="input_search_nr">请填写搜索内容</string>
+
+    <!--工作督办登记-->
+    <string name="gzdbdj_title">工作督办登记</string>
+    <string name="gzdb_list_title">工作督办信息</string>
+    <string name="dbbm">督办部门</string>
+    <string name="dbr">督办人</string>
+    <string name="zxr">执行人</string>
+    <string name="dblx">督办类型</string>
+    <string name="dbnr">督办内容</string>
+    <string name="xdsj">下达时间</string>
+    <string name="yqwcsj">要求完成时间</string>
+    <string name="wcjg">完成结果</string>
+    <string name="wcqk">完成情况</string>
+    <string name="sjwcsj">实际完成时间</string>
+    <string name="qrqk">确认情况</string>
+    <string name="qrsj">确认时间</string>
+    <string name="cjr">创建人</string>
+    <string name="cjsj">创建时间</string>
+    <string name="xgr">修改人</string>
+    <string name="xgsj">修改时间</string>
+    <string name="bz">备注</string>
+
+    <!--三违问题-->
+    <string name="swwt_title">三违问题</string>
+    <string name="swlx">三违类型</string>
+    <string name="swbm">三违部门</string>
+    <string name="swnr">三违内容</string>
+    <string name="swnrqt">三违内容(其他)</string>
+    <string name="swrq">三违日期</string>
+    <string name="cfje">处罚金额</string>
+    <string name="jcsj">检查时间</string>
+    <string name="bmkf">部门扣分</string>
+    <string name="jcry">检查人员</string>
+
+    <!--安全检查问题-->
+    <string name="aqjcwt_title">安全检查问题</string>
+    <string name="jclb">检查类别</string>
+    <string name="bjcdw">被检查单位</string>
+    <string name="jccs">检查场所</string>
+    <string name="jcqkjzgyq">检查情况以及整改要求</string>
+    <string name="jcy">检查员</string>
+    <string name="zrr">责任人</string>
+
+    <!--6s问题-->
+    <string name="lswt_title">6S问题</string>
+    <string name="wtbm">问题部门</string>
+    <string name="fxsj">发现时间</string>
+    <string name="zrq">责任区</string>
+    <string name="dxlb">对象类别</string>
+    <string name="lslb">6S类别</string>
+    <string name="wtdcs">问题点阐述</string>
+    <string name="gsjy">改善建议</string>
+    <string name="yqwcrq">要求完成日期</string>
+    <string name="gszrr">改善责任人</string>
+    <string name="gsnr">改善内容</string>
+    <string name="sjwcrq">实际完成日期</string>
+    <string name="jgpj">结果评价</string>
+
+
+</resources>
