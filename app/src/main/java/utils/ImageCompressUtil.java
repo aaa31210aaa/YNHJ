@@ -267,8 +267,7 @@ public class ImageCompressUtil {
      */
     public static Bitmap compressBitmapTest(Bitmap bm, File file) {
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 10;
-
+        options.inSampleSize = 5;  //数值越小图片像素越高
         bm = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
         Log.e("wechat", "压缩后图片的大小" + (bm.getByteCount())
                 + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight());

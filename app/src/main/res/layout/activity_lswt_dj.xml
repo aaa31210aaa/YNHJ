@@ -365,14 +365,39 @@
                     android:text="" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/qb_px_5"
+                android:text="整改前"
+                android:textColor="@color/white" />
 
             <utils.MyGridView
-                android:id="@+id/lswt_gridview"
+                android:id="@+id/lswt_gridview_zgq"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/qb_px_5"
                 android:horizontalSpacing="@dimen/qb_px_5"
                 android:verticalSpacing="@dimen/qb_px_5"></utils.MyGridView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/qb_px_5"
+                android:text="整改后"
+                android:textColor="@color/white" />
+
+
+            <utils.MyGridView
+                android:id="@+id/lswt_gridview_zgh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/qb_px_5"
+                android:horizontalSpacing="@dimen/qb_px_5"
+                android:verticalSpacing="@dimen/qb_px_5"></utils.MyGridView>
+
         </LinearLayout>
     </ScrollView>
 
