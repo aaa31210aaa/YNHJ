@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +23,7 @@
                 android:id="@+id/workbench_dbrw"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench1" />
 
             <ImageView
@@ -50,7 +51,7 @@
                 android:id="@+id/workbench_hyjg"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench2" />
 
             <ImageView
@@ -86,7 +87,7 @@
                 android:id="@+id/workbench_gzdbdj"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench3" />
 
             <ImageView
@@ -114,7 +115,7 @@
                 android:id="@+id/workbench_swwtdj"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench4" />
 
             <ImageView
@@ -150,7 +151,7 @@
                 android:id="@+id/workbench_aqjcwtdj"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench5" />
 
             <ImageView
@@ -178,7 +179,7 @@
                 android:id="@+id/workbench_lswtdj"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench6" />
 
             <ImageView
@@ -190,9 +191,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
                 android:text="@string/workbench6"
+                android:layout_marginLeft="@dimen/qb_px_20"
                 android:textColor="@color/white" />
+
+            <com.nightonke.boommenu.BoomMenuButton
+                android:id="@+id/lswt_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:bmb_autoHide="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/qb_px_100"
+                app:bmb_backgroundEffect="false"
+                app:bmb_buttonPlaceEnum="buttonPlace_ham_2"
+                app:bmb_hideDuration="500"
+                app:bmb_piecePlaceEnum="piecePlace_ham_2"
+                app:bmb_showDuration="500" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -206,14 +221,13 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/qb_px_10"
-            >
+            android:layout_marginTop="@dimen/qb_px_5">
 
             <ImageView
                 android:id="@+id/workbench_aqyhgl"
                 android:layout_width="@dimen/qb_px_160"
                 android:layout_height="@dimen/qb_px_50"
-                android:layout_margin="@dimen/qb_px_10"
+                android:layout_margin="@dimen/qb_px_12"
                 android:background="@color/workbench7" />
 
             <ImageView
@@ -225,11 +239,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/qb_px_20"
                 android:text="@string/workbench7"
                 android:textColor="@color/white" />
-        </RelativeLayout>
 
+            <com.nightonke.boommenu.BoomMenuButton
+                android:id="@+id/yhgl_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:bmb_autoHide="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/qb_px_110"
+                app:bmb_backgroundEffect="false"
+                app:bmb_buttonPlaceEnum="buttonPlace_ham_4"
+                app:bmb_hideDuration="500"
+                app:bmb_piecePlaceEnum="piecePlace_ham_4"
+                app:bmb_showDuration="500" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 

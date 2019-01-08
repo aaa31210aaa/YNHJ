@@ -3,14 +3,9 @@ package tab;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Matrix;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -34,7 +29,6 @@ import com.ToxicBakery.viewpager.transforms.ZoomInTransformer;
 import com.ToxicBakery.viewpager.transforms.ZoomOutTranformer;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
-
 import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
@@ -63,16 +57,11 @@ import cn.bingoogolapple.badgeview.BGABadgeRelativeLayout;
 import ui.Notify;
 import utils.BarChartManager;
 import utils.BaseFragment;
-import utils.CustomDatePicker;
 import utils.DateUtils;
-import utils.DayAxisValueFormatter;
 import utils.LocalImageHolderView;
-import utils.MyValueFormatter;
 import utils.RingView;
-import utils.ShowToast;
 import utils.ValueFormatter;
 
-import static utils.BaseFragment.getResId;
 import static utils.CustomDatePicker.END_DAY;
 import static utils.CustomDatePicker.END_MONTH;
 import static utils.CustomDatePicker.END_YEAR;
@@ -80,7 +69,6 @@ import static utils.CustomDatePicker.START_DAY;
 import static utils.CustomDatePicker.START_MONTH;
 import static utils.CustomDatePicker.START_YEAR;
 import static utils.CustomDatePicker.getTimeYearMonthDay;
-import static utils.CustomDatePicker.pvCustomTime;
 
 
 /**
@@ -168,7 +156,7 @@ public class Home extends BaseFragment {
         choose_day_month.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ShowToast.showShort(getActivity(), dayMonth.get(position));
+//                ShowToast.showShort(getActivity(), dayMonth.get(position));
             }
 
             @Override

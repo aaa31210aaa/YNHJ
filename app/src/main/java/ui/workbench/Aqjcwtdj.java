@@ -5,6 +5,7 @@ import android.widget.TextView;
 import com.project.dimine.ynhj.R;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import utils.BaseActivity;
 
 public class Aqjcwtdj extends BaseActivity {
@@ -24,5 +25,10 @@ public class Aqjcwtdj extends BaseActivity {
     @Override
     protected void initData() {
         title_name.setText(R.string.aqjcwt_title);
+    }
+
+    @OnClick(R.id.back)
+    void Back() {
+        finish();
     }
 }

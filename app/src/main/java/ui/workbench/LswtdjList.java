@@ -33,6 +33,8 @@ import utils.DialogUtil;
 import utils.DividerItemDecoration;
 import utils.ShowToast;
 
+import static tab.Workbench.lsTag;
+
 public class LswtdjList extends BaseActivity {
     @BindView(R.id.title_name)
     TextView title_name;
@@ -49,6 +51,7 @@ public class LswtdjList extends BaseActivity {
     private List<LswtBean> mDatas;
     private List<LswtBean> searchDatas;
     private LswtAdapter adapter;
+    private String tag = "";
 
     @Override
     protected int getPageLayoutID() {
@@ -65,8 +68,11 @@ public class LswtdjList extends BaseActivity {
 
     @Override
     protected void initData() {
+        tag = getIntent().getStringExtra(lsTag);
         title_name.setText(R.string.lswt_title);
-        title_name_right.setImageResource(R.drawable.add);
+        if (tag.equals("6sdj")){
+            title_name_right.setImageResource(R.drawable.add);
+        }
         mConnect();
     }
 
@@ -228,10 +234,11 @@ public class LswtdjList extends BaseActivity {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                LswtBean bean = (LswtBean) adapter.getData().get(position);
-                Intent intent = new Intent(LswtdjList.this, LswtDj.class);
-                intent.putExtra("tag", "modify");
-                startActivity(intent);
+                if (tag.equals("6scl")){
+                    LswtBean bean = (LswtBean) adapter.getData().get(position);
+                    Intent intent = new Intent(LswtdjList.this, LswtCl.class);
+                    startActivity(intent);
+                }
             }
         });
     }

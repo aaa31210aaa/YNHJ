@@ -38,7 +38,6 @@
     <!-- 用于申请获取蓝牙信息进行室内定位 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
     <uses-permission
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
@@ -56,8 +55,6 @@
         android:roundIcon="@drawable/jpush_notification_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="1bcf83cdd7eaf099585bfc89aa3711f5" />
@@ -136,13 +133,12 @@
         <activity android:name="ui.workbench.Swwtdj" />
         <activity android:name="ui.workbench.Aqjcwtdj" />
         <activity android:name="ui.workbench.LswtdjList" />
-        <activity android:name="ui.workbench.Aqyhgl" />
         <activity android:name="ui.workbench.KcsjTodo" />
         <activity android:name="ui.workbench.XkdryTodo" />
         <activity android:name="ui.workbench.GzdbdjList" />
         <activity android:name="ui.workbench.SwwtList" />
         <activity android:name="ui.workbench.AqjcwtList" />
-        <activity android:name="ui.workbench.LswtDj"></activity>
+        <activity android:name="ui.workbench.LswtDj" />
         <activity
             android:name="com.foamtrace.photopicker.PhotoPickerActivity"
             android:configChanges="orientation|screenSize"
@@ -151,6 +147,14 @@
             android:name="com.foamtrace.photopicker.PhotoPreviewActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/PhotoPickerTheme" />
+        <activity android:name="ui.workbench.YhdjList" />
+        <activity android:name="ui.workbench.YhfcList" />
+        <activity android:name="ui.workbench.SgdjList" />
+        <activity android:name="ui.workbench.Yhdj" />
+        <activity android:name="ui.workbench.Yhzg" />
+        <activity android:name="ui.workbench.LswtCl" />
+        <activity android:name="ui.workbench.Yhfc" />
+        <activity android:name="ui.workbench.Sgdj"></activity>
     </application>
 
 </manifest>

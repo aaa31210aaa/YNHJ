@@ -110,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:background="@drawable/editext_bk"
+                    android:drawableRight="@drawable/kcsj_dateimg"
                     android:gravity="center"
                     android:padding="@dimen/qb_px_5"
                     android:text="" />
@@ -249,6 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:background="@drawable/editext_bk"
+                    android:drawableRight="@drawable/kcsj_dateimg"
                     android:gravity="center"
                     android:padding="@dimen/qb_px_5"
                     android:text="" />
@@ -295,6 +297,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:background="@drawable/editext_bk"
+                    android:drawableRight="@drawable/kcsj_dateimg"
                     android:gravity="center"
                     android:padding="@dimen/qb_px_5"
                     android:text="" />

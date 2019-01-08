@@ -334,6 +334,8 @@ public class Swwtdj extends BaseActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (swwt_swnr.getItemAtPosition(i).toString().equals("三违内容(其他)")) {
                     swwt_swnrqt_lin.setVisibility(View.VISIBLE);
+                }else{
+                    swwt_swnrqt_lin.setVisibility(View.GONE);
                 }
             }
 

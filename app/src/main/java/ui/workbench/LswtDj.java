@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -48,7 +47,6 @@ import utils.ImageCompressUtil;
 import utils.MyGridView;
 import utils.PermissionSettingPage;
 import utils.PermissionUtil;
-import utils.PortIpAddress;
 import utils.SharedPrefsUtil;
 import utils.ShowToast;
 import utils.WaterImage;
@@ -63,7 +61,6 @@ import static utils.CustomDatePicker.getTimeYearMonthDay;
 import static utils.PermissionUtil.CAMERA_REQUESTCODE;
 import static utils.PermissionUtil.CameraPermission;
 import static utils.PermissionUtil.LocationPermission;
-import static utils.PortIpAddress.BZZ;
 
 public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCallbacks {
     @BindView(R.id.title_name)
@@ -86,69 +83,55 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     EditText lswt_gsjy;
     @BindView(R.id.lswt_yqwcrq)
     TextView lswt_yqwcrq;
-    @BindView(R.id.lswt_gszrr_lin)
-    LinearLayout lswt_gszrr_lin;
-    @BindView(R.id.lswt_gszrr)
-    EditText lswt_gszrr;
-    @BindView(R.id.lswt_gsnr_lin)
-    LinearLayout lswt_gsnr_lin;
-    @BindView(R.id.lswt_gsnr)
-    EditText lswt_gsnr;
-    @BindView(R.id.lswt_sjwcrq_lin)
-    LinearLayout lswt_sjwcrq_lin;
-    @BindView(R.id.lswt_sjwcrq)
-    TextView lswt_sjwcrq;
-    @BindView(R.id.lswt_jgpj_lin)
-    LinearLayout lswt_jgpj_lin;
-    @BindView(R.id.lswt_jgpj)
-    EditText lswt_jgpj;
-    @BindView(R.id.lswt_cjr_lin)
-    LinearLayout lswt_cjr_lin;
-    @BindView(R.id.lswt_cjr)
-    EditText lswt_cjr;
+//    @BindView(R.id.lswt_gszrr_lin)
+//    LinearLayout lswt_gszrr_lin;
+//    @BindView(R.id.lswt_gszrr)
+//    EditText lswt_gszrr;
+//    @BindView(R.id.lswt_gsnr_lin)
+//    LinearLayout lswt_gsnr_lin;
+//    @BindView(R.id.lswt_gsnr)
+//    EditText lswt_gsnr;
+//    @BindView(R.id.lswt_sjwcrq_lin)
+//    LinearLayout lswt_sjwcrq_lin;
+//    @BindView(R.id.lswt_sjwcrq)
+//    TextView lswt_sjwcrq;
+//    @BindView(R.id.lswt_jgpj_lin)
+//    LinearLayout lswt_jgpj_lin;
+//    @BindView(R.id.lswt_jgpj)
+//    EditText lswt_jgpj;
+//    @BindView(R.id.lswt_cjr_lin)
+//    LinearLayout lswt_cjr_lin;
+//    @BindView(R.id.lswt_cjr)
+//    EditText lswt_cjr;
     private String tag = "";
     private TimePickerView fxsjTime;
     private TimePickerView yqwcrqTime;
-    private TimePickerView sjwcrqTime;
+
     @BindView(R.id.lswt_gridview_zgq)
     MyGridView lswt_gridview_zgq;
-    @BindView(R.id.lswt_gridview_zgh)
-    MyGridView lswt_gridview_zgh;
-
 
     //当前位置的信息
     private String local;
     //默认字符
     private static final String myCode = "000000";
-    private static final String myCode_zgh = "000000";
     //选择的图片的集合
     private ArrayList<String> imagePaths;
-    private ArrayList<String> imagePaths_zgh;
 
     //返回码
     private static final int REQUEST_CAMERA_CODE = 10;  //相册
-    private static final int REQUEST_CAMERA_CODE_ZGH = 15;
     private static final int REQUEST_PREVIEW_CODE = 20; //预览
-    private static final int REQUEST_PREVIEW_CODE_ZGH = 25;
     private CommonlyGridViewAdapter gridAdapter;
-    private CommonlyGridViewAdapter gridAdapter_zgh;
 
 
     private Uri cameraFileUri;
-    private Uri cameraFileUriZgh;
 
     private String savePath;
-    private String savePath_zgh;
     private File picture;
-    private File picture_zgh;
 
     //加水印后的图片地址
     private String waterPath;
-    private String waterPath_zgh;
     private File waterf;
-    private File waterf_zgh;
     private ArrayList<String> list;
-    private ArrayList<String> list_zgh;
 
     //定位需要的声明
     public AMapLocationClient mLocationClient = null;
@@ -157,14 +140,11 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     //声明AMapLocationClientOption对象
     public AMapLocationClientOption mLocationOption = null;
     private String imgs;
-    private String imgs_zgh;
 
     private int clickPosition;
-    private int clickPosition_zgh;
     //版本比较：是否是4.4及以上版本
     private final boolean mIsKitKat = Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT;
     private String safeMan = "";
-    private String isZg = "";
 
     @Override
     protected int getPageLayoutID() {
@@ -174,28 +154,14 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     @Override
     protected void initView() {
         tag = getIntent().getStringExtra("tag");
-        if (tag.equals("modify")) {
-            if (PortIpAddress.getUserType(this).equals(BZZ)) {
-                lswt_gszrr_lin.setVisibility(View.VISIBLE);
-                lswt_gsnr_lin.setVisibility(View.VISIBLE);
-                lswt_sjwcrq_lin.setVisibility(View.VISIBLE);
-                lswt_jgpj_lin.setVisibility(View.VISIBLE);
-                lswt_cjr_lin.setVisibility(View.VISIBLE);
-                lswt_sjwcrq.setText(DateUtils.getStringDateShort());
-                initSjwcrq(lswt_sjwcrq);
-            }
-        }
         initLocal();
         CameraUtil.init(this);
     }
 
-    private void Test(){
-
-    }
 
     @Override
     protected void initData() {
-        title_name.setText(R.string.lswt_title);
+        title_name.setText(R.string.lsdj);
         title_name_right.setText(R.string.submit);
         lswt_fxsj.setText(DateUtils.getStringDateShort());
         initFxsj(lswt_fxsj);
@@ -210,11 +176,8 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
             lswt_gsjy.setText("XXX建议");
         }
         imagePaths = new ArrayList<String>();
-        imagePaths_zgh = new ArrayList<>();
         list = new ArrayList<>();
-        list_zgh = new ArrayList<>();
         initGrid();
-        initGridZgh();
     }
 
     @OnClick(R.id.back)
@@ -240,14 +203,7 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
             yqwcrqTime.show();
     }
 
-    /**
-     * 实际完成日期
-     */
-    @OnClick(R.id.lswt_sjwcrq)
-    void Sjwcrq() {
-        if (sjwcrqTime != null)
-            sjwcrqTime.show();
-    }
+
 
     private void initGrid() {
         //设置gridview一行多少个
@@ -260,40 +216,15 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
         lswt_gridview_zgq.setAdapter(gridAdapter);
     }
 
-    private void initGridZgh() {
-        //设置gridview一行多少个
-        int cols = getResources().getDisplayMetrics().widthPixels / getResources().getDisplayMetrics().densityDpi;
-        cols = cols < 3 ? 3 : cols;
-        lswt_gridview_zgh.setNumColumns(cols);
-        AddImageZgh();
-        imagePaths_zgh.add(myCode_zgh);
-        gridAdapter_zgh = new CommonlyGridViewAdapter(this, imagePaths_zgh);
-        lswt_gridview_zgh.setAdapter(gridAdapter_zgh);
-    }
-
 
     private void AddImage() {
         //添加多张图片
         lswt_gridview_zgq.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                isZg = "zgq";
                 imgs = (String) parent.getItemAtPosition(position);
                 clickPosition = position;
                 checkCameraPermissions();
-            }
-        });
-    }
-
-    private void AddImageZgh() {
-        //添加多张图片
-        lswt_gridview_zgh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                isZg = "zgh";
-                imgs_zgh = (String) parent.getItemAtPosition(position);
-                clickPosition_zgh = position;
-                checkCameraPermissionsZgh();
             }
         });
     }
@@ -314,20 +245,6 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     }
 
 
-    private void checkCameraPermissionsZgh() {
-        /**
-         * 检测读写权限
-         */
-        String[] perms = {CameraPermission, LocationPermission};
-        if (EasyPermissions.hasPermissions(this, perms)) {//有权限
-            ClickAddZgh(clickPosition_zgh);
-        } else {
-            // Do not have permissions, request them now
-            EasyPermissions.requestPermissions(this, getString(R.string.permission_camera),
-                    CAMERA_REQUESTCODE, perms);
-        }
-    }
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -346,12 +263,7 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
         // Some permissions have been granted
 //        CheckVersion checkVersion = new CheckVersion();
 //        checkVersion.CheckVersions(this, TAG);
-        if (isZg.equals("zgh")) {
-            ClickAddZgh(clickPosition_zgh);
-        } else {
-            ClickAdd(clickPosition);
-        }
-
+        ClickAdd(clickPosition);
     }
 
     /**
@@ -389,27 +301,6 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     }
 
 
-    private void ClickAddZgh(int position) {
-        if (PermissionUtil.hasSdcard()) {
-            if (myCode_zgh.equals(imgs_zgh)) {
-                if (lswt_gridview_zgh.getCount() >= 7) {
-                    ShowToast.showShort(this, "最多添加6张图片");
-                } else {
-                    OpenCameraZgh();
-                }
-            } else {
-                PhotoPreviewIntent intent = new PhotoPreviewIntent(this);
-                imagePaths_zgh.remove(imagePaths_zgh.size() - 1);
-                intent.setCurrentItem(position);
-                intent.setPhotoPaths(imagePaths_zgh);
-                startActivityForResult(intent, REQUEST_PREVIEW_CODE_ZGH);
-            }
-        } else {
-            ShowToast.showShort(this, "没有SD卡");
-        }
-    }
-
-
     /**
      * 打开相机
      */
@@ -438,31 +329,6 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
     }
 
 
-    private void OpenCameraZgh() {
-        if (mIsKitKat) {
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                createWaterFileZgh();
-                picture_zgh = new File(savePath_zgh, System.currentTimeMillis() + ".jpg");
-                cameraFileUriZgh = FileProvider.getUriForFile(this, "com.project.dimine.ynhj.fileprovider", picture_zgh);
-                //添加这一句表示对目标应用临时授权该Uri所代表的文件
-                takePictureIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraFileUriZgh);
-                startActivityForResult(takePictureIntent, REQUEST_CAMERA_CODE_ZGH);
-            } else {//判断是否有相机应用
-                ShowToast.showShort(this, "无相机应用");
-            }
-        } else {
-            createWaterFileZgh();
-            picture_zgh = new File(savePath_zgh, System.currentTimeMillis() + ".jpg");
-            cameraFileUriZgh = Uri.fromFile(picture_zgh);
-            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, cameraFileUriZgh);
-            startActivityForResult(intent, REQUEST_CAMERA_CODE_ZGH);
-        }
-    }
-
-
     /**
      * 创建加水印后的图片文件夹
      */
@@ -474,14 +340,6 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
         }
     }
 
-
-    private void createWaterFileZgh() {
-        savePath_zgh = PermissionUtil.sdCard + "/YNHJ/";
-        File f = new File(savePath_zgh);
-        if (!f.exists()) {
-            f.mkdir();
-        }
-    }
 
     private void initLocal() {
         //初始化定位
@@ -542,9 +400,9 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String water_time = "" + sdf.format(new Date());
 
-                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, "拍摄时间：" + water_time, 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_10));
-                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, "拍摄地点：" + local, 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_7));
-                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, safeMan + SharedPrefsUtil.getValue(this, "userInfo", "USER_NAME", ""), 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_4));
+                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, "拍摄时间：" + water_time, 8, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_10));
+                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, "拍摄地点：" + local, 8, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_7));
+                    bitmap = WaterImage.drawTextToLeftBottom(this, bitmap, safeMan + SharedPrefsUtil.getValue(this, "userInfo", "USER_NAME", ""), 8, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_4));
 
                     try {
                         FileOutputStream baos = new FileOutputStream(picture);
@@ -571,44 +429,6 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
                     }
                     System.gc();
                     break;
-                case REQUEST_CAMERA_CODE_ZGH:
-                    Bitmap bitmap_zgh = BitmapFactory.decodeFile(picture_zgh.getAbsolutePath());
-                    bitmap_zgh = saveBitmapZgh(bitmap_zgh);
-                    int degree_zgh = WaterImage.getBitmapDegree(picture_zgh.getAbsolutePath());
-                    bitmap_zgh = WaterImage.rotateBitmapByDegree(bitmap_zgh, degree_zgh);
-                    SimpleDateFormat sdf_zgh = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    String water_time_zgh = "" + sdf_zgh.format(new Date());
-
-                    bitmap_zgh = WaterImage.drawTextToLeftBottom(this, bitmap_zgh, "拍摄时间：" + water_time_zgh, 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_10));
-                    bitmap_zgh = WaterImage.drawTextToLeftBottom(this, bitmap_zgh, "拍摄地点：" + local, 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_7));
-                    bitmap_zgh = WaterImage.drawTextToLeftBottom(this, bitmap_zgh, safeMan + SharedPrefsUtil.getValue(this, "userInfo", "USER_NAME", ""), 5, Color.WHITE, (int) getResources().getDimension(R.dimen.qb_px_2), (int) getResources().getDimension(R.dimen.qb_px_4));
-
-                    try {
-                        FileOutputStream baos_zgh = new FileOutputStream(picture_zgh);
-                        // 把压缩后的数据存放到baos中  质量压缩并保存一下
-                        bitmap_zgh.compress(Bitmap.CompressFormat.JPEG, 90, baos_zgh);
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    }
-
-
-                    String path_zgh = picture_zgh.getAbsolutePath();
-                    //保存带水印的图片并添加到集合中展示
-                    list_zgh.add(path_zgh);
-                    PermissionUtil.refreshAlbum(this, picture_zgh);
-                    if (list_zgh.contains(myCode_zgh)) {
-                        list_zgh.remove(myCode_zgh);
-                    }
-                    list_zgh.add(myCode_zgh);
-                    imagePaths_zgh = list_zgh;
-                    gridAdapter_zgh.DataNotify(imagePaths_zgh);
-
-                    if (bitmap_zgh != null) {
-                        bitmap_zgh.recycle();
-                        bitmap = null;
-                    }
-                    System.gc();
-                    break;
 
                 // 预览
                 case REQUEST_PREVIEW_CODE:
@@ -618,46 +438,21 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
                         loadAdpater(ListExtra);
                     }
                     break;
-                case REQUEST_PREVIEW_CODE_ZGH:
-                    if (data != null) {
-                        ArrayList<String> ListExtra = data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT);
-                        Log.d(TAG, "ListExtra: " + "ListExtra = " + ListExtra.size());
-                        loadAdpaterZgh(ListExtra);
-                    }
-                    break;
             }
         } else {
-            if (isZg.equals("zgh")) {
-                if (data == null) {
-                    if (!imagePaths_zgh.contains(myCode_zgh)) {
-                        imagePaths_zgh.add(myCode_zgh);
-                    }
-                    gridAdapter_zgh.notifyDataSetChanged();
-                } else {
-                    ArrayList<String> ListExtra = data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT);
-                    if (!ListExtra.contains(myCode_zgh)) {
-                        ListExtra.add(myCode_zgh);
-                    }
-                    imagePaths_zgh = ListExtra;
-                    gridAdapter_zgh.DataNotify(imagePaths_zgh);
+            if (data == null) {
+                if (!imagePaths.contains(myCode)) {
+                    imagePaths.add(myCode);
                 }
+                gridAdapter.notifyDataSetChanged();
             } else {
-                if (data == null) {
-                    if (!imagePaths.contains(myCode)) {
-                        imagePaths.add(myCode);
-                    }
-                    gridAdapter.notifyDataSetChanged();
-                } else {
-                    ArrayList<String> ListExtra = data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT);
-                    if (!ListExtra.contains(myCode)) {
-                        ListExtra.add(myCode);
-                    }
-                    imagePaths = ListExtra;
-                    gridAdapter.DataNotify(imagePaths);
+                ArrayList<String> ListExtra = data.getStringArrayListExtra(PhotoPreviewActivity.EXTRA_RESULT);
+                if (!ListExtra.contains(myCode)) {
+                    ListExtra.add(myCode);
                 }
+                imagePaths = ListExtra;
+                gridAdapter.DataNotify(imagePaths);
             }
-
-
         }
     }
 
@@ -674,30 +469,12 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
         gridAdapter.DataNotify(imagePaths);
     }
 
-    private void loadAdpaterZgh(List<String> paths) {
-        if (imagePaths_zgh != null && imagePaths_zgh.size() > 0) {
-            imagePaths_zgh.clear();
-        }
-        if (imagePaths_zgh.contains(myCode_zgh)) {
-            imagePaths_zgh.remove(myCode_zgh);
-        }
-        imagePaths_zgh.addAll(paths);
-        imagePaths_zgh.add(myCode_zgh);
-        gridAdapter_zgh.DataNotify(imagePaths_zgh);
-    }
-
 
     /**
      * 保存照片
      */
     public Bitmap saveBitmap(Bitmap mBitmap) {
         mBitmap = ImageCompressUtil.compressBitmapTest(mBitmap, picture);
-        return mBitmap;
-    }
-
-
-    public Bitmap saveBitmapZgh(Bitmap mBitmap){
-        mBitmap = ImageCompressUtil.compressBitmapTest(mBitmap, picture_zgh);
         return mBitmap;
     }
 
@@ -721,8 +498,8 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
 
                     @Override
                     public void customLayout(View v) {
-                        final TextView tvSubmit =  v.findViewById(R.id.tv_finish);
-                        ImageView ivCancel =  v.findViewById(R.id.iv_cancel);
+                        final TextView tvSubmit = v.findViewById(R.id.tv_finish);
+                        ImageView ivCancel = v.findViewById(R.id.iv_cancel);
                         tvSubmit.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -767,8 +544,8 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
 
                     @Override
                     public void customLayout(View v) {
-                        final TextView tvSubmit =  v.findViewById(R.id.tv_finish);
-                        ImageView ivCancel =  v.findViewById(R.id.iv_cancel);
+                        final TextView tvSubmit = v.findViewById(R.id.tv_finish);
+                        ImageView ivCancel = v.findViewById(R.id.iv_cancel);
                         tvSubmit.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -794,49 +571,5 @@ public class LswtDj extends BaseActivity implements EasyPermissions.PermissionCa
                 .build();
     }
 
-    private void initSjwcrq(final TextView textView) {
-        Calendar selectedDate = Calendar.getInstance();//系统当前时间
-        Calendar startDate = Calendar.getInstance();
-        startDate.set(START_YEAR, START_MONTH, START_DAY);
-        Calendar endDate = Calendar.getInstance();
-        endDate.set(END_YEAR, END_MONTH, END_DAY);
-        //时间选择器 ，自定义布局
-        sjwcrqTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
-            @Override
-            public void onTimeSelect(Date date, View v) {//选中事件回调
-                textView.setText(getTimeYearMonthDay(date));
-            }
-        })
-                .setDate(selectedDate)
-                .setRangDate(startDate, endDate)
-                .setLayoutRes(R.layout.pickerview_custom_time, new CustomListener() {
 
-                    @Override
-                    public void customLayout(View v) {
-                        final TextView tvSubmit =  v.findViewById(R.id.tv_finish);
-                        ImageView ivCancel = v.findViewById(R.id.iv_cancel);
-                        tvSubmit.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                sjwcrqTime.returnData();
-                                sjwcrqTime.dismiss();
-                            }
-                        });
-                        ivCancel.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                sjwcrqTime.dismiss();
-                            }
-                        });
-                    }
-                })
-                .setContentTextSize(18)
-                .setType(new boolean[]{true, true, true, false, false, false})
-                .setLabel("年", "月", "日", "", "", "")
-                .setLineSpacingMultiplier(1.2f)
-                .setTextXOffset(0, 0, 0, 40, 0, -40)
-                .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
-                .setDividerColor(0xFF24AD9D)
-                .build();
-    }
 }

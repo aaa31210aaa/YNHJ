@@ -65,7 +65,7 @@ public class AqjcwtList extends BaseActivity {
 
     @Override
     protected void initData() {
-        title_name.setText(R.string.swwt_title);
+        title_name.setText(R.string.aqjcwt_title);
         title_name_right.setImageResource(R.drawable.add);
         mConnect();
     }

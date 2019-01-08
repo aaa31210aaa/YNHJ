@@ -53,6 +53,7 @@
                 <TextView
                     android:id="@+id/lswt_fxsj"
                     style="@style/workbench_editext"
+                    android:drawableRight="@drawable/kcsj_dateimg"
                     android:text="" />
             </LinearLayout>
 
@@ -170,200 +171,10 @@
                 <TextView
                     android:id="@+id/lswt_yqwcrq"
                     style="@style/workbench_editext"
+                    android:drawableRight="@drawable/kcsj_dateimg"
                     android:text="" />
             </LinearLayout>
 
-
-            <LinearLayout
-                android:id="@+id/lswt_gszrr_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/gszrr" />
-
-                <EditText
-                    android:id="@+id/lswt_gszrr"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_gsnr_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/gsnr" />
-
-                <EditText
-                    android:id="@+id/lswt_gsnr"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/lswt_sjwcrq_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/sjwcrq" />
-
-                <TextView
-                    android:id="@+id/lswt_sjwcrq"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_jgpj_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/jgpj" />
-
-                <EditText
-                    android:id="@+id/lswt_jgpj"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_cjr_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/cjr" />
-
-                <EditText
-                    android:id="@+id/lswt_cjr"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_cjsj_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/cjsj" />
-
-                <TextView
-                    android:id="@+id/lswt_cjsj"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_xgr_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/xgr" />
-
-                <EditText
-                    android:id="@+id/lswt_xgr"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/lswt_xgsj_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/xgsj" />
-
-                <TextView
-                    android:id="@+id/lswt_xgsj"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/lswt_bz_lin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/bz" />
-
-                <EditText
-                    android:id="@+id/lswt_bz"
-                    style="@style/workbench_editext"
-                    android:text="" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -381,22 +192,6 @@
                 android:horizontalSpacing="@dimen/qb_px_5"
                 android:verticalSpacing="@dimen/qb_px_5"></utils.MyGridView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:padding="@dimen/qb_px_5"
-                android:text="整改后"
-                android:textColor="@color/white" />
-
-
-            <utils.MyGridView
-                android:id="@+id/lswt_gridview_zgh"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/qb_px_5"
-                android:horizontalSpacing="@dimen/qb_px_5"
-                android:verticalSpacing="@dimen/qb_px_5"></utils.MyGridView>
 
         </LinearLayout>
     </ScrollView>
