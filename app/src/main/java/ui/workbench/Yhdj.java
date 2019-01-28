@@ -11,8 +11,10 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -68,6 +70,8 @@ public class Yhdj extends BaseActivity {
     TextView title_name_right;
     @BindView(R.id.yhdj_yhmc)
     EditText yhdj_yhmc;
+    @BindView(R.id.yhdj_yhjb)
+    Spinner yhdj_yhjb;
     @BindView(R.id.yhdj_yhlx)
     EditText yhdj_yhlx;
     @BindView(R.id.yhdj_pcrq)
@@ -79,11 +83,11 @@ public class Yhdj extends BaseActivity {
     @BindView(R.id.yhdj_yhdd)
     EditText yhdj_yhdd;
     @BindView(R.id.yhdj_zgzrr)
-    EditText yhdj_zgzrr;
+    Spinner yhdj_zgzrr;
     @BindView(R.id.yhdj_zrrfgld)
     EditText yhdj_zrrfgld;
     @BindView(R.id.yhdj_jdr)
-    EditText yhdj_jdr;
+    Spinner yhdj_jdr;
     @BindView(R.id.yhdj_yhms)
     EditText yhdj_yhms;
     @BindView(R.id.yhdj_yhbgzy)
@@ -151,6 +155,8 @@ public class Yhdj extends BaseActivity {
 
     @Override
     protected void initView() {
+        initZrr();
+        initJdr();
         initLocal();
         CameraUtil.init(this);
     }
@@ -178,6 +184,65 @@ public class Yhdj extends BaseActivity {
     void Back() {
         finish();
     }
+
+    private void initZrr() {
+        ArrayAdapter<String> spinnerAadapter = new ArrayAdapter<String>(this,
+                R.layout.custom_spiner_text_item, getZrr());
+        spinnerAadapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        yhdj_zgzrr.setAdapter(spinnerAadapter);
+
+        yhdj_zgzrr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                itemString = dbrw_zydd.getItemAtPosition(i).toString();
+                return;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private List<String> getZrr() {
+        List<String> spinnerList = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            spinnerList.add("责任人" + i);
+        }
+        return spinnerList;
+    }
+
+
+    private void initJdr() {
+        ArrayAdapter<String> spinnerAadapter = new ArrayAdapter<String>(this,
+                R.layout.custom_spiner_text_item, getJdr());
+        spinnerAadapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
+        yhdj_jdr.setAdapter(spinnerAadapter);
+
+        yhdj_jdr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                itemString = dbrw_zydd.getItemAtPosition(i).toString();
+                return;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private List<String> getJdr() {
+        List<String> spinnerList = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            spinnerList.add("监督人" + i);
+        }
+        return spinnerList;
+    }
+
+
 
     /**
      * 排查日期

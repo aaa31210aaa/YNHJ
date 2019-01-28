@@ -46,7 +46,21 @@
     <color name="workbench4">#7752c7</color>
     <color name="workbench5">#a2792f</color>
     <color name="workbench6">#5c3c10</color>
-    <color name="workbench7">#575151</color>
+    <color name="workbench7">#a1c766</color>
     <color name="laboratory_cardview">#feb062</color>
     <color name="photopicker_background">#181819</color>
+
+
+    <color name="home_todo">#b7a575</color>
+    <color name="home_yj">#fbafaf</color>
+    <color name="home_aqtj">#d16666</color>
+
+    <color name="report_bg">#2A2E4B</color>
+    <color name="report_1">#28CBEE</color>
+    <color name="report_2">#2CA0DD</color>
+    <color name="report_3">#1BAAEC</color>
+    <color name="report_4">#749EF4</color>
+    <color name="report_5">#A3C3F4</color>
+
+
 </resources>

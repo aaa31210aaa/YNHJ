@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ui.workbench.AddDbrw">
+
+    <include layout="@layout/common_title"></include>
+
+    <LinearLayout
+        android:id="@+id/dbrw_zydd_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_margin="@dimen/qb_px_5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/zydd" />
+
+        <Spinner
+            android:id="@+id/dbrw_zydd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:minHeight="@dimen/qb_px_40"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dbrw_bc_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dbrw_zydd_lin"
+        android:layout_margin="@dimen/qb_px_5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bc" />
+
+        <Spinner
+            android:id="@+id/dbrw_bc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:minHeight="@dimen/qb_px_40"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dbrw_yfc_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dbrw_bc_lin"
+        android:layout_margin="@dimen/qb_px_5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/yfc" />
+
+        <EditText
+            android:id="@+id/dbrw_yfc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:inputType="number"
+            android:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dbrw_yfc_lin"
+        android:layout_margin="@dimen/qb_px_5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/zcs" />
+
+        <EditText
+            android:id="@+id/dbrw_zcs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:inputType="number"
+            android:text="" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_dbrw_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/fillin_btn"
+        android:text="@string/submit"
+        android:textColor="@color/white" />
+</RelativeLayout>

@@ -11,7 +11,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -143,11 +144,12 @@
                 android:text="整改前"
                 android:textColor="@color/white" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:src="@mipmap/ic_launcher" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/yhfc_zgq_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -157,15 +159,21 @@
                 android:text="整改后"
                 android:textColor="@color/white" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/qb_px_5"
-                android:src="@mipmap/ic_launcher" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/yhfc_zgh_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
     </ScrollView>
 
-
+    <Button
+        android:id="@+id/yhfc_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:background="@drawable/fillin_btn"
+        android:text="@string/submit"
+        android:textColor="@color/white" />
 </LinearLayout>

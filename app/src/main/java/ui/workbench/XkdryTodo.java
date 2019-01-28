@@ -28,7 +28,6 @@ import adapter.TicketsAdapter;
 import bean.TodoBean;
 import butterknife.BindView;
 import butterknife.OnClick;
-import ui.XkdryFillInTickets;
 import utils.BaseActivity;
 import utils.DividerItemDecoration;
 import utils.ShowToast;
@@ -50,7 +49,6 @@ public class XkdryTodo extends BaseActivity {
     private String ch_arr[];
     private String xkd_arr[];
     private String tj_arr[];
-    private String submit_time[];
 
 
     @Override
@@ -67,7 +65,6 @@ public class XkdryTodo extends BaseActivity {
         ch_arr = getResources().getStringArray(R.array.ch_data);
         xkd_arr = getResources().getStringArray(R.array.xkd_data);
         tj_arr = getResources().getStringArray(R.array.tj_data);
-        submit_time = getResources().getStringArray(R.array.submit_time_data);
         mConnect();
     }
 
@@ -207,12 +204,7 @@ public class XkdryTodo extends BaseActivity {
             bean.setCh(ch_arr[i]);
             bean.setXkd(xkd_arr[i]);
             bean.setTj(tj_arr[i]);
-            if (i < 4) {
-                bean.setIsSubmit("已确认");
-                bean.setSubmit_date(submit_time[i]);
-            } else {
-                bean.setIsSubmit("未确认");
-            }
+            bean.setIsSubmit("未确认");
             mDatas.add(bean);
         }
 

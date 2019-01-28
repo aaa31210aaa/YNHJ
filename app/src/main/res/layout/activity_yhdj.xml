@@ -38,7 +38,27 @@
                     android:text="" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/qb_px_5"
+                android:gravity="center"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/yhjb" />
+
+                <Spinner
+                    android:id="@+id/yhdj_yhjb"
+                    style="@style/workbench_editext"
+                    android:entries="@array/yhjb"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown"
+                    android:text="" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -152,9 +172,11 @@
                     android:layout_weight="1"
                     android:text="@string/zgzrr" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/yhdj_zgzrr"
                     style="@style/workbench_editext"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown"
                     android:text="" />
             </LinearLayout>
 
@@ -192,12 +214,13 @@
                     android:layout_weight="1"
                     android:text="@string/jdr" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/yhdj_jdr"
                     style="@style/workbench_editext"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown"
                     android:text="" />
             </LinearLayout>
-
 
 
             <LinearLayout

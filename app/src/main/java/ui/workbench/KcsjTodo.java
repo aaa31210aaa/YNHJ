@@ -61,6 +61,11 @@ public class KcsjTodo extends BaseActivity {
         return R.layout.activity_kcsj_todo;
     }
 
+    @OnClick(R.id.back)
+    void Back() {
+        finish();
+    }
+
     @OnClick(R.id.tickets_xkd)
     void SpeekAgain() {
         ttsUtils.startSpeaking(str_qz + str);

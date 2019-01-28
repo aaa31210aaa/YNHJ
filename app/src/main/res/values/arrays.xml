@@ -381,4 +381,10 @@
         <item>三违内容</item>
         <item>三违内容(其他)</item>
     </string-array>
+
+    <string-array name="yhjb">
+        <item>公司级</item>
+        <item>部门级</item>
+    </string-array>
+
 </resources>

@@ -8,9 +8,7 @@ import com.project.dimine.ynhj.R;
 
 import java.util.List;
 
-import bean.NotifyBean;
 import bean.ProductionPanelBean;
-import ui.ProductionPanel;
 
 public class MonthlyDetailAdapter extends BaseQuickAdapter<ProductionPanelBean, BaseViewHolder> {
     public MonthlyDetailAdapter(int layoutResId, @Nullable List<ProductionPanelBean> data) {

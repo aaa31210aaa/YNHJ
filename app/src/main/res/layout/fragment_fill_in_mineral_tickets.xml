@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray_bg"
     android:orientation="vertical"
-    tools:context="ui.FillInMineralTickets">
+    tools:context="ui.workbench.FillInMineralTickets">
 
     <include layout="@layout/common_title"></include>
 

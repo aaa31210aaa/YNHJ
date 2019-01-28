@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/report_bg"
+    android:orientation="vertical"
+    tools:context="ui.planreport.PlanReport">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/qb_px_5"
+        android:src="@drawable/back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:layout_toRightOf="@+id/back"
+        android:text="计划报表"
+        android:textColor="@color/white"
+        android:textSize="@dimen/qb_px_16" />
+
+    <RadioGroup
+        android:id="@+id/plan_report_radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/back"
+        android:orientation="horizontal"
+        android:padding="@dimen/qb_px_2">
+
+        <RadioButton
+            android:id="@+id/day_report_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/report_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="日"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/month_report_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/qb_px_15"
+            android:background="@drawable/report_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="月"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/year_report_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/report_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="年"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/plan_report_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/plan_report_radiogroup">
+
+    </android.support.v4.view.ViewPager>
+
+
+</RelativeLayout>

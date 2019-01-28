@@ -27,6 +27,7 @@ public class MyApplication extends Application {
     private static Context context;
     public static int CUSTOM_PUSH_NOTIFI_STYLE = 1;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -35,8 +36,8 @@ public class MyApplication extends Application {
         initOkGo();
         JPushInterface.setDebugMode(true);
         JPushInterface.init(context);
-        JpushNotifictionUtil.customPushNotification(this, CUSTOM_PUSH_NOTIFI_STYLE, R.layout.custom_push_notification, R.drawable.ic_launcher, R.drawable.jpush_notification_icon);
-//        JpushNotifictionUtil.customPushNotification2(context);
+        JpushNotifictionUtil.customPushNotification(this, CUSTOM_PUSH_NOTIFI_STYLE, R.layout.custom_push_notification, R.drawable.jpush_notification_icon, R.drawable.jpush_notification_icon);
+
     }
 
     //获取应用上下文环境

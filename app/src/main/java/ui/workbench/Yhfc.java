@@ -1,5 +1,8 @@
 package ui.workbench;
 
+import android.content.Intent;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,15 +11,21 @@ import com.bigkoo.pickerview.builder.TimePickerBuilder;
 import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnTimeSelectListener;
 import com.bigkoo.pickerview.view.TimePickerView;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.project.dimine.ynhj.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import adapter.YhfcZgqAdapter;
+import bean.YhBean;
 import butterknife.BindView;
 import butterknife.OnClick;
 import utils.BaseActivity;
 import utils.DateUtils;
+import utils.PhotoView;
 
 import static utils.CustomDatePicker.END_DAY;
 import static utils.CustomDatePicker.END_MONTH;
@@ -29,11 +38,14 @@ import static utils.CustomDatePicker.getTimeYearMonthDay;
 public class Yhfc extends BaseActivity {
     @BindView(R.id.title_name)
     TextView title_name;
-    @BindView(R.id.title_name_right)
-    TextView title_name_right;
     @BindView(R.id.yhfc_xasj)
     TextView yhfc_xasj;
     private TimePickerView xasjTime;
+    @BindView(R.id.yhfc_zgq_img)
+    RecyclerView yhfc_zgq_img;
+    private List<YhBean> zgqImgList;
+    private YhfcZgqAdapter adapter;
+    private String[] mImages;
 
     @Override
     protected int getPageLayoutID() {
@@ -42,15 +54,16 @@ public class Yhfc extends BaseActivity {
 
     @Override
     protected void initView() {
+        initZgqRv();
 
     }
 
     @Override
     protected void initData() {
         title_name.setText(R.string.yhfc);
-        title_name_right.setText(R.string.submit);
         yhfc_xasj.setText(DateUtils.getStringDateShort());
         initXasj(yhfc_xasj);
+        yhfc_zgq_img.setLayoutManager(new GridLayoutManager(this, 4, GridLayoutManager.VERTICAL, false));
     }
 
     @OnClick(R.id.back)
@@ -111,5 +124,33 @@ public class Yhfc extends BaseActivity {
     void Sjwcrq() {
         if (xasjTime != null)
             xasjTime.show();
+    }
+
+    private void initZgqRv() {
+        zgqImgList = new ArrayList<>();
+        mImages = new String[5];
+        for (int i = 0; i < 5; i++) {
+            YhBean bean = new YhBean();
+            bean.setZgqImage("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2206825903,3455955087&fm=58");
+            mImages[i] = bean.getZgqImage();
+            zgqImgList.add(bean);
+        }
+
+        if (adapter == null) {
+            adapter = new YhfcZgqAdapter(this, R.layout.yhfc_zgq_item, zgqImgList);
+            yhfc_zgq_img.setAdapter(adapter);
+        } else {
+            adapter.setNewData(zgqImgList);
+        }
+
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(Yhfc.this, PhotoView.class);
+                intent.putExtra("position", position);
+                intent.putExtra("urls", mImages);
+                startActivity(intent);
+            }
+        });
     }
 }

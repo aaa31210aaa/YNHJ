@@ -94,9 +94,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getPageLayoutID());
         ButterKnife.bind(this);
+        StatusBarUtils.initStatusBarColor(this, R.color.colorPrimaryDark);
         initView();
         initData();
-        StatusBarUtils.initStatusBarColor(this, R.color.colorPrimaryDark);
     }
 
     protected abstract int getPageLayoutID();

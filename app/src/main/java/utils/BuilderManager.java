@@ -87,7 +87,8 @@ public class BuilderManager {
         return new TextOutsideCircleButton.Builder()
                 .normalImageRes(getImageResource())
                 .normalTextRes(R.string.text_outside_circle_button_text_normal)
-                .pieceColor(Color.WHITE);
+                .pieceColor(Color.WHITE)
+                ;
     }
 
     static HamButton.Builder getHamButtonBuilder() {
@@ -108,7 +109,9 @@ public class BuilderManager {
         return new HamButton.Builder()
                 .normalImageRes(image)
                 .normalTextRes(str)
-                .subNormalTextRes(sub);
+                .subNormalTextRes(sub)
+                .normalColor(R.color.transparent)
+                ;
     }
 
     static HamButton.Builder getHamButtonBuilderWithDifferentPieceColor() {

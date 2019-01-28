@@ -8,385 +8,311 @@
 
     <include layout="@layout/home_title"></include>
 
-
-    <com.bigkoo.convenientbanner.ConvenientBanner
-        android:id="@+id/homeBanner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/qb_px_130"
-        android:layout_below="@+id/title_name"
-        app:canLoop="true"></com.bigkoo.convenientbanner.ConvenientBanner>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/qb_px_170"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RelativeLayout
+        <cn.bingoogolapple.badgeview.BGABadgeRelativeLayout
+            android:id="@+id/dbrw_badge"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:padding="@dimen/qb_px_5">
-
-            <TextView
-                android:id="@+id/ckl_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/jhckl_ll"
-                android:layout_centerHorizontal="true"
-                android:text="采矿量/%"
-                android:textColor="@color/white" />
-
-            <utils.RingView
-                android:id="@+id/ckl_ring"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <LinearLayout
-                android:id="@+id/jhckl_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/ljckl_ll"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="计划采矿量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/jhckl_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ljckl_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/jrckl_ll"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="累计采矿量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/ljckl_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/jrckl_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="今日采矿量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/jrckl_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-            </LinearLayout>
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:padding="@dimen/qb_px_5">
-
-            <TextView
-                android:id="@+id/bll_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/jhbll_ll"
-                android:layout_centerHorizontal="true"
-                android:text="剥离量/%"
-                android:textColor="@color/white" />
-
-            <utils.RingView
-                android:id="@+id/bll_ring"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <LinearLayout
-                android:id="@+id/jhbll_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/ljbll_ll"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="计划剥离量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/jhbll_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ljbll_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/jrbll_ll"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="累计剥离量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/ljbll_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/jrbll_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:text="今日剥离量"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-                <TextView
-                    android:id="@+id/jrbll_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/qb_px_20"
-                    android:text="9023t"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/ring_size" />
-
-            </LinearLayout>
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/qb_px_10"
-        android:orientation="vertical">
-
-        <Spinner
-            android:id="@+id/choose_day_month"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="当月"
-            android:padding="@dimen/qb_px_5"/>
+            app:badge_gravity="rightTop"
+            app:badge_textSize="12sp"
+           >
 
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/home_barchart"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/home_todo_lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/qb_px_2"
+                android:background="@color/home_todo"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/qb_px_10">
 
-        </com.github.mikephil.charting.charts.BarChart>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_todo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/todo"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </cn.bingoogolapple.badgeview.BGABadgeRelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/home_yj_lin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/qb_px_2"
+            android:layout_weight="1"
+            android:background="@color/home_yj"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/qb_px_10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/notice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yj"
+                android:textColor="@color/white" />
+        </LinearLayout>
 
     </LinearLayout>
 
+    <include layout="@layout/refresh_rv"></include>
+
+
+    <!--<com.bigkoo.convenientbanner.ConvenientBanner-->
+    <!--android:id="@+id/homeBanner"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/qb_px_130"-->
+    <!--app:canLoop="true"></com.bigkoo.convenientbanner.ConvenientBanner>-->
 
     <!--<LinearLayout-->
     <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:gravity="center"-->
+    <!--android:layout_height="@dimen/qb_px_170"-->
     <!--android:orientation="horizontal">-->
 
     <!--<RelativeLayout-->
-    <!--android:id="@+id/sckb_rl"-->
     <!--android:layout_width="0dp"-->
-    <!--android:layout_height="@dimen/qb_px_100"-->
-    <!--android:layout_weight="1">-->
-
-    <!--<ImageView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:paddingRight="@dimen/qb_px_3"-->
-    <!--android:src="@drawable/homeitembg" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/sckb"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="@dimen/qb_px_23"-->
-    <!--android:src="@drawable/sckb" />-->
-
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/sckb"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:text="@string/sckb"-->
-    <!--android:textSize="@dimen/qb_px_10" />-->
-    <!--</RelativeLayout>-->
-
-    <!--<RelativeLayout-->
-    <!--android:id="@+id/hyjg_rl"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="@dimen/qb_px_100"-->
-    <!--android:layout_weight="1">-->
-
-    <!--<ImageView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:paddingRight="@dimen/qb_px_3"-->
-    <!--android:src="@drawable/homeitembg" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/hyjg"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="@dimen/qb_px_23"-->
-    <!--android:src="@drawable/hyjg" />-->
-
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/hyjg"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:text="@string/hyjg"-->
-    <!--android:textSize="@dimen/qb_px_10" />-->
-    <!--</RelativeLayout>-->
-
-    <!--<cn.bingoogolapple.badgeview.BGABadgeRelativeLayout-->
-    <!--android:id="@+id/notify_badge"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="@dimen/qb_px_100"-->
+    <!--android:layout_height="match_parent"-->
     <!--android:layout_weight="1"-->
-    <!--app:badge_gravity="rightTop"-->
-    <!--app:badge_horizontalMargin="@dimen/qb_px_10"-->
-    <!--app:badge_verticalMargin="@dimen/qb_px_5">-->
+    <!--android:background="@color/colorAccent"-->
+    <!--android:padding="@dimen/qb_px_5">-->
 
-    <!--<ImageView-->
+    <!--<TextView-->
+    <!--android:id="@+id/ckl_tv"-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:paddingRight="@dimen/qb_px_3"-->
-    <!--android:src="@drawable/homeitembg" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/tzgg"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/jhckl_ll"-->
     <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="@dimen/qb_px_23"-->
-    <!--android:src="@drawable/notify" />-->
+    <!--android:text="采矿量/%"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<utils.RingView-->
+    <!--android:id="@+id/ckl_ring"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/jhckl_ll"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@id/ljckl_ll"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
 
     <!--<TextView-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/tzgg"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:text="@string/tzgg"-->
-    <!--android:textSize="@dimen/qb_px_10" />-->
-    <!--</cn.bingoogolapple.badgeview.BGABadgeRelativeLayout>-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="计划采矿量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/jhckl_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
 
     <!--</LinearLayout>-->
 
     <!--<LinearLayout-->
+    <!--android:id="@+id/ljckl_ll"-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/jrckl_ll"-->
     <!--android:gravity="center"-->
     <!--android:orientation="horizontal">-->
-
-    <!--<RelativeLayout-->
-    <!--android:id="@+id/dbsy_rl"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="@dimen/qb_px_100"-->
-    <!--android:layout_weight="1">-->
-
-    <!--<ImageView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:paddingRight="@dimen/qb_px_3"-->
-    <!--android:src="@drawable/homeitembg" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/dbsy"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="@dimen/qb_px_23"-->
-    <!--android:src="@drawable/dbsy" />-->
 
     <!--<TextView-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/dbsy"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="累计采矿量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/ljckl_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/jrckl_ll"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="今日采矿量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/jrckl_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@color/colorAccent"-->
+    <!--android:padding="@dimen/qb_px_5">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/bll_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/jhbll_ll"-->
     <!--android:layout_centerHorizontal="true"-->
-    <!--android:text="@string/dbsy"-->
-    <!--android:textSize="@dimen/qb_px_10" />-->
+    <!--android:text="剥离量/%"-->
+    <!--android:textColor="@color/white" />-->
+
+    <!--<utils.RingView-->
+    <!--android:id="@+id/bll_ring"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/jhbll_ll"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/ljbll_ll"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="计划剥离量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/jhbll_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ljbll_ll"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/jrbll_ll"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="累计剥离量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/ljbll_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/jrbll_ll"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="今日剥离量"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/jrbll_tv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/qb_px_20"-->
+    <!--android:text="9023t"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/ring_size" />-->
+
+    <!--</LinearLayout>-->
     <!--</RelativeLayout>-->
     <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingBottom="@dimen/qb_px_10">-->
+
+    <!--<Spinner-->
+    <!--android:id="@+id/choose_day_month"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="@dimen/qb_px_5"-->
+    <!--android:text="当月" />-->
+
+    <!--<com.github.mikephil.charting.charts.BarChart-->
+    <!--android:id="@+id/home_barchart"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--</com.github.mikephil.charting.charts.BarChart>-->
+
+    <!--</LinearLayout>-->
+
+
 </LinearLayout>

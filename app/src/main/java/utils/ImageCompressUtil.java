@@ -238,7 +238,7 @@ public class ImageCompressUtil {
             with = 480;
             height = 800;
         }
-//        Bitmap result = Bitmap.createBitmap(bmp.getWidth() / ratio, bmp.getHeight() / ratio, Bitmap.Config.ARGB_8888);
+//      Bitmap result = Bitmap.createBitmap(bmp.getWidth() / ratio, bmp.getHeight() / ratio, Bitmap.Config.ARGB_8888);
         Bitmap result = Bitmap.createBitmap(with, height, Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(result);
 //        Rect rect = new Rect(0, 0, bmp.getWidth() / ratio, bmp.getHeight() / ratio);
@@ -253,7 +253,7 @@ public class ImageCompressUtil {
             fos.write(baos.toByteArray());
             fos.flush();
             fos.close();
-//            bmp.recycle();
+//          bmp.recycle();
             baos.close();
             result.recycle();
         } catch (Exception e) {

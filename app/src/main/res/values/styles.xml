@@ -18,6 +18,20 @@
         <item name="tabSelectedTextColor">@color/colorAccent</item>
     </style>
 
+    <!--统计分析tab-->
+    <style name="StatisticalTab" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <!--<item name="tabPaddingStart">@dimen/qb_px_10</item>-->
+        <item name="tabTextColor">@color/tabtv_unselect</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
+
+    <style name="StatisticalTabStyle">
+        <item name="android:textSize">@dimen/qb_px_15</item>
+    </style>
+
     <style name="Textinputlayoutstyle">
         <item name="android:textColorHint">@color/gray_normal</item>
         <item name="colorControlNormal">@color/white</item>
@@ -50,6 +64,7 @@
     <style name="workbench_editext">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/qb_px_30</item>
         <item name="android:layout_weight">2</item>
         <item name="android:background">@drawable/editext_bk</item>
         <item name="android:gravity">center</item>

@@ -6,19 +6,18 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="ui.FillInMineralTickets">
+    tools:context="ui.workbench.FillInMineralTickets">
 
     <include layout="@layout/common_title"></include>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <LinearLayout
@@ -291,6 +290,13 @@
 
         </LinearLayout>
     </ScrollView>
-
+    
+    <Button
+        android:id="@+id/tickets_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_50"
+        android:background="@drawable/fillin_btn"
+        android:text="@string/save"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

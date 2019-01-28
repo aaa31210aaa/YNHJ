@@ -35,7 +35,6 @@ import adapter.TodoAdapter;
 import bean.TodoBean;
 import butterknife.BindView;
 import butterknife.OnClick;
-import ui.ChooseDestination;
 import utils.BaseActivity;
 import utils.DateUtils;
 import utils.DividerItemDecoration;
@@ -52,8 +51,6 @@ import static utils.CustomDatePicker.getTimeYearMonthDay;
 public class Dbrw extends BaseActivity {
     @BindView(R.id.title_name)
     TextView title_name;
-    @BindView(R.id.back)
-    ImageView back;
     @BindView(R.id.title_name_right)
     TextView title_name_right;
     @BindView(R.id.search_edittext)
@@ -307,5 +304,22 @@ public class Dbrw extends BaseActivity {
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
                 .setDividerColor(0xFF24AD9D)
                 .build();
+    }
+
+    /**
+     * 手动添加任务
+     */
+    @OnClick(R.id.dbrw_fbt)
+    void Add() {
+        Intent intent = new Intent(this, AddDbrw.class);
+        startActivityForResult(intent, 10);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            mConnect();
+        }
     }
 }

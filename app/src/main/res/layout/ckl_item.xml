@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:layout_margin="@dimen/qb_px_5"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="@dimen/qb_px_10"
+    app:cardElevation="@dimen/qb_px_8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/qb_px_2">
+
+            <TextView
+                android:id="@+id/jhckl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jhckl" />
+
+            <TextView
+                android:id="@+id/jhckl_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/jhckl_name"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/ljckl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jhckl_name"
+                android:text="@string/ljckl" />
+
+            <TextView
+                android:id="@+id/ljckl_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jhckl_tv"
+                android:layout_toRightOf="@+id/ljckl_name"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/byckl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ljckl_name"
+                android:text="@string/byckl" />
+
+            <TextView
+                android:id="@+id/byckl_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ljckl_tv"
+                android:layout_toRightOf="@+id/byckl_name"
+                android:text="" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/qb_px_2">
+
+            <TextView
+                android:id="@+id/jhbll_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jhbll" />
+
+            <TextView
+                android:id="@+id/jhbll_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/jhbll_name"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/ljbll_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jhbll_name"
+                android:text="@string/ljbll" />
+
+            <TextView
+                android:id="@+id/ljbll_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jhbll_tv"
+                android:layout_toRightOf="@+id/ljbll_name"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/bybll_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ljbll_name"
+                android:text="@string/bybll" />
+
+            <TextView
+                android:id="@+id/bybll_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ljbll_tv"
+                android:layout_toRightOf="@+id/bybll_name"
+                android:text="" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

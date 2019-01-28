@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ui.ChooseDestination">
+    tools:context="ui.workbench.ChooseDestination">
 
     <include layout="@layout/common_title"></include>
 

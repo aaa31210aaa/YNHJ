@@ -6,6 +6,7 @@ import android.os.Message;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.KeyEvent;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import butterknife.BindView;
 import pub.devrel.easypermissions.EasyPermissions;
 import tab.Home;
 import tab.Mine;
+import tab.Statistical;
 import tab.Workbench;
 import utils.BaseActivity;
 import utils.NoScrollViewPager;
@@ -40,7 +42,9 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
         //设置tab
         SetTab();
         checkWritePermissions();
+
     }
+
 
     @Override
     protected int getPageLayoutID() {
@@ -83,6 +87,7 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
         // Some permissions have been granted
 //        CheckVersion checkVersion = new CheckVersion();
 //        checkVersion.CheckVersions(this, TAG);
+        Log.e(TAG,"66");
     }
 
     /**
@@ -106,11 +111,11 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
 //            fragments.add(new TodoFragment());
 //            fragments.add(new LaboratoryResultFragment());
         fragments.add(new Workbench());
+        fragments.add(new Statistical());
         fragments.add(new Mine());
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments, new String[]{"首页", "工作台", "我的"});
-        main_viewpager.setOffscreenPageLimit(2);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments, new String[]{"首页", "工作台", "统计分析", "我的"});
+        main_viewpager.setOffscreenPageLimit(3);
         main_viewpager.setAdapter(adapter);
-
 
         //关联图文
         main_tablayout.setupWithViewPager(main_viewpager);
@@ -144,6 +149,9 @@ public class MainActivity extends BaseActivity implements EasyPermissions.Permis
 //                  d = ContextCompat.getDrawable(this, R.drawable.ledger_tab);
                     break;
                 case 2:
+                    d = ContextCompat.getDrawable(this, R.drawable.statistical_tab);
+                    break;
+                case 3:
                     d = ContextCompat.getDrawable(this, R.drawable.mine_tab);
                     break;
             }

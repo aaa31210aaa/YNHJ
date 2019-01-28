@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -87,9 +86,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name="ui.Welcome"
             android:screenOrientation="portrait">
@@ -103,30 +100,30 @@
             android:name="ui.Login"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.ModifyPwd"
+            android:name="ui.mine.ModifyPwd"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.About"
+            android:name="ui.mine.About"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.Notify"
+            android:name="ui.home.Notify"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.NotifyDetail"
+            android:name="ui.home.NotifyDetail"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.ProductionPanel"
+            android:name="ui.workbench.ProductionPanel"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.OneDayDetail"
+            android:name="ui.workbench.OneDayDetail"
             android:screenOrientation="portrait" />
         <activity
-            android:name="ui.ChooseDestination"
+            android:name="ui.workbench.ChooseDestination"
             android:screenOrientation="portrait" />
-        <activity android:name="ui.FillInMineralTickets" />
-        <activity android:name="ui.TicketsList" />
-        <activity android:name="ui.LaboratoryResult" />
-        <activity android:name="ui.XkdryFillInTickets" />
+        <activity android:name="ui.workbench.FillInMineralTickets" />
+        <activity android:name="ui.workbench.TicketsList" />
+        <activity android:name="ui.workbench.LaboratoryResult" />
+        <activity android:name="ui.workbench.XkdryFillInTickets" />
         <activity android:name="ui.workbench.Dbrw" />
         <activity android:name="ui.workbench.Hyjg" />
         <activity android:name="ui.workbench.Gzdbdj" />
@@ -154,7 +151,16 @@
         <activity android:name="ui.workbench.Yhzg" />
         <activity android:name="ui.workbench.LswtCl" />
         <activity android:name="ui.workbench.Yhfc" />
-        <activity android:name="ui.workbench.Sgdj"></activity>
+        <activity android:name="ui.workbench.Sgdj" />
+        <activity android:name="ui.home.Yj" />
+        <activity android:name="ui.home.Aqtj" />
+        <activity android:name="ui.workbench.AddDbrw" />
+        <activity android:name="ui.workbench.BmHyjg" />
+        <activity android:name="ui.workbench.LsfcList" />
+        <activity android:name="ui.workbench.Lsfc" />
+        <activity android:name="utils.PhotoView" />
+        <activity android:name="ui.workbench.KdddyTodo" />
+        <activity android:name="ui.planreport.PlanReport"></activity>
     </application>
 
 </manifest>

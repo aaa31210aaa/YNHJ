@@ -15,8 +15,6 @@ import android.view.animation.Transformation;
 import java.util.ArrayList;
 import java.util.List;
 
-import tab.Home;
-
 /**
  * Created by lumingmin on 16/5/27.
  */
@@ -290,8 +288,6 @@ public class RingView extends View {
         mRingViewAnim.setDuration(animDuration);
 
         startAnimation(mRingViewAnim);
-
-
     }
 
 

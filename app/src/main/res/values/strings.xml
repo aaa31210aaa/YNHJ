@@ -17,6 +17,8 @@
     <string name="account_or_pwd_err">账号或者密码错误</string>
     <string name="loading_write">登陆中...</string>
     <string name="click_agin">再按一次退出应用</string>
+    <string name="connect_err">连接失败，请检查网络</string>
+
 
     <!--首页-->
     <string name="home_title">首页</string>
@@ -24,6 +26,14 @@
     <string name="tzgg">通知公告</string>
     <string name="dbsy">待办事宜</string>
     <string name="hyjg">化验结果</string>
+    <string name="todo">待办</string>
+    <string name="yj">预警</string>
+    <string name="jhckl">计划采矿量：</string>
+    <string name="ljckl">累计采矿量：</string>
+    <string name="byckl">本月采矿量：</string>
+    <string name="jhbll">计划剥离量：</string>
+    <string name="ljbll">累计剥离量：</string>
+    <string name="bybll">本月剥离量：</string>
 
     <!--工作台-->
     <string name="workbench_title">工作台</string>
@@ -34,6 +44,8 @@
     <string name="workbench5">安全检查问题登记</string>
     <string name="workbench6">6S问题管理</string>
     <string name="workbench7">安全隐患管理</string>
+    <string name="workbench8">事故登记</string>
+    <string name="bc">班次</string>
     <!--任务-->
     <string name="task_title">任务</string>
 
@@ -106,6 +118,9 @@
     <string name="card6_tv">供硫化矿堆3#</string>
     <string name="card7_tv">铅矿堆</string>
     <string name="card8_tv">供新储备上堆</string>
+    <string name="zydd">作业地点</string>
+    <string name="yfc">已发车</string>
+    <string name="zcs">总车数</string>
 
     <string name="date">日期</string>
     <string name="ch">车号</string>
@@ -122,8 +137,9 @@
     <string name="heji">合计</string>
     <string name="save">保存</string>
     <string name="save_success">保存成功</string>
-    <string name="submit">确定</string>
+    <string name="submit">确认</string>
     <string name="submit_success">确认成功</string>
+
 
     <!--化验结果查询-->
     <string name="laboratoryresult_title">化验结果查询</string>
@@ -133,6 +149,10 @@
     <string name="yybh">原样编号</string>
     <string name="Auys">Au(10*-6)</string>
     <string name="input_search_nr">请填写搜索内容</string>
+    <string name="brhysq">本人化验申请</string>
+    <string name="bmhysq">部门化验申请</string>
+    <string name="brhysq_sub">以个人进行申请化验</string>
+    <string name="bmhysq_sub">以部门进行申请化验</string>
 
     <!--工作督办登记-->
     <string name="gzdbdj_title">工作督办登记</string>
@@ -182,6 +202,9 @@
     <string name="lsdj_sub">对6S问题进行登记</string>
     <string name="lscl_sub">对登记的6S问题确认处理</string>
     <string name="lscl">6S问题处理</string>
+    <string name="lsfc">6S复查</string>
+    <string name="lsfc_sub">对处理完的6S问题进行复查</string>
+
     <string name="wtbm">问题部门</string>
     <string name="fxsj">发现时间</string>
     <string name="zrq">责任区</string>
@@ -211,6 +234,7 @@
 
     <string name="yhbh">隐患编号</string>
     <string name="yhmc">隐患名称</string>
+    <string name="yhjb">隐患级别</string>
     <string name="yhlx">隐患类型</string>
     <string name="pcrq">排查日期</string>
     <string name="zglx">整改类型</string>
@@ -249,6 +273,34 @@
     <string name="sgdw">事故单位</string>
     <string name="sgdq">事故地区</string>
     <string name="sgqksm">事故情况说明</string>
+    <!--统计分析-->
+    <string name="tjfx">统计分析</string>
+    <string name="rblbb">日剥离报表</string>
+    <string name="rckbb">日采矿报表</string>
+    <string name="rgkbb">日供矿报表</string>
+    <string name="rccgkbb">日采场供矿报表</string>
+    <string name="rcbdbb">日储备堆报表</string>
+    <string name="rcbjcbb">日储备结存报表</string>
+    <string name="rjhbb">日计划报表</string>
+    <string name="raqtj">日安全统计</string>
+
+    <string name="yblbb">月剥离报表</string>
+    <string name="yckbb">月采矿报表</string>
+    <string name="ygkbb">月供矿报表</string>
+    <string name="yccgkbb">月采场供矿报表</string>
+    <string name="ycbdbb">月储备堆报表</string>
+    <string name="ycbjcbb">月储备结存报表</string>
+    <string name="yjhbb">月计划报表</string>
+    <string name="yaqtj">月安全统计</string>
+
+    <string name="nblbb">年剥离报表</string>
+    <string name="nckbb">年采矿报表</string>
+    <string name="ngkbb">年供矿报表</string>
+    <string name="nccgkbb">年采场供矿报表</string>
+    <string name="ncbdbb">年储备堆报表</string>
+    <string name="ncbjcbb">年储备结存报表</string>
+    <string name="njhbb">年计划报表</string>
+    <string name="naqtj">年安全统计</string>
 
 
     <string name="text_inside_circle_button_text_normal">Text Inside Circle Button(Normal)</string>

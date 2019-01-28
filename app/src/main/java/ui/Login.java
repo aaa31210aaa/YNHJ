@@ -14,21 +14,26 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.model.Response;
 import com.project.dimine.ynhj.MainActivity;
 import com.project.dimine.ynhj.R;
 
+import bean.UserInfo;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.jpush.android.api.JPushInterface;
 import utils.AppUtils;
 import utils.ClearEditText;
 import utils.DialogUtil;
+import utils.JsonCallback;
+import utils.PortIpAddress;
 import utils.SharedPrefsUtil;
 import utils.ShowToast;
 import utils.StatusBarUtils;
 
 public class Login extends AppCompatActivity {
+    private String TAG = getClass().getSimpleName();
     @BindView(R.id.account_etv)
     ClearEditText account_etv;
     @BindView(R.id.pwd_etv)
@@ -46,8 +51,6 @@ public class Login extends AppCompatActivity {
     Button btn_login;
     private Dialog dialog;
     private boolean isExit = false;
-    private String usertype = "";
-    private String usertypeName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,6 +197,37 @@ public class Login extends AppCompatActivity {
 
     @OnClick(R.id.btn_login)
     void Login() {
+//        if (account_etv.getText().toString().equals("")) {
+////            ShowToast.showShort();
+//            account_textinputlayout.setError(getString(R.string.account_no_empty));
+//            account_etv.startShakeAnimation();
+//        } else if (pwd_etv.getText().toString().equals("")) {
+//            pwd_textinputlayout.setError(getString(R.string.pwd_no_empty));
+//            pwd_etv.startShakeAnimation();
+//        } else if (account_etv.getText().toString().equals("admin1") && pwd_etv.getText().toString().equals("123")) {
+//            usertype = "1";
+//            usertypeName = "采矿调度员";
+//            handler.sendEmptyMessageDelayed(1, 1500);
+//        } else if (account_etv.getText().toString().equals("admin2") && pwd_etv.getText().toString().equals("123")) {
+//            usertype = "2";
+//            usertypeName = "卡车司机";
+//            handler.sendEmptyMessageDelayed(1, 1500);
+//        } else if (account_etv.getText().toString().equals("admin3") && pwd_etv.getText().toString().equals("123")) {
+//            usertype = "3";
+//            usertypeName = "卸矿点操作员";
+//            handler.sendEmptyMessageDelayed(1, 1500);
+//        } else if (account_etv.getText().toString().equals("admin4") && pwd_etv.getText().toString().equals("123")) {
+//            usertype = "4";
+//            usertypeName = "采矿班组长";
+//            handler.sendEmptyMessageDelayed(1, 1500);
+//        } else if (account_etv.getText().toString().equals("admin5") && pwd_etv.getText().toString().equals("123")) {
+//            usertype = "5";
+//            usertypeName = "矿堆调度员";
+//            handler.sendEmptyMessageDelayed(1, 1500);
+//        } else {
+//            handler.sendEmptyMessageDelayed(2, 1500);
+//        }
+
         dialog = DialogUtil.createLoadingDialog(Login.this, R.string.loading_write);
         if (account_etv.getText().toString().equals("")) {
 //            ShowToast.showShort();
@@ -202,29 +236,10 @@ public class Login extends AppCompatActivity {
         } else if (pwd_etv.getText().toString().equals("")) {
             pwd_textinputlayout.setError(getString(R.string.pwd_no_empty));
             pwd_etv.startShakeAnimation();
-        } else if (account_etv.getText().toString().equals("admin1") && pwd_etv.getText().toString().equals("123")) {
-            usertype = "1";
-            usertypeName = "采矿调度员";
+        }else{
             handler.sendEmptyMessageDelayed(1, 1500);
-        } else if (account_etv.getText().toString().equals("admin2") && pwd_etv.getText().toString().equals("123")) {
-            usertype = "2";
-            usertypeName = "卡车司机";
-            handler.sendEmptyMessageDelayed(1, 1500);
-        } else if (account_etv.getText().toString().equals("admin3") && pwd_etv.getText().toString().equals("123")) {
-            usertype = "3";
-            usertypeName = "卸矿点操作员";
-            handler.sendEmptyMessageDelayed(1, 1500);
-        } else if (account_etv.getText().toString().equals("admin4") && pwd_etv.getText().toString().equals("123")) {
-            usertype = "4";
-            usertypeName = "采矿班组长";
-            handler.sendEmptyMessageDelayed(1, 1500);
-        } else if (account_etv.getText().toString().equals("admin5") && pwd_etv.getText().toString().equals("123")) {
-            usertype = "5";
-            usertypeName = "矿堆调度员";
-            handler.sendEmptyMessageDelayed(1, 1500);
-        } else {
-            handler.sendEmptyMessageDelayed(2, 1500);
         }
+
     }
 
 
@@ -238,10 +253,6 @@ public class Login extends AppCompatActivity {
                     break;
                 case 1:
                     mConnect();
-                    break;
-                case 2:
-                    dialog.dismiss();
-                    ShowToast.showShort(Login.this, R.string.account_or_pwd_err);
                     break;
                 default:
                     break;
@@ -275,20 +286,58 @@ public class Login extends AppCompatActivity {
 
 
     private void mConnect() {
-        //用户角色类型  1=采矿调度员、2=卡车司机、3=卸矿点操作员  4=采矿班组长
-        JPushInterface.setAlias(this, 0, usertype + "");
-        SharedPrefsUtil.putValue(Login.this, "userInfo", "usertype", usertype);
-        SharedPrefsUtil.putValue(Login.this, "userInfo", "usertypename", usertypeName);
-        if (SharedPrefsUtil.getValue(Login.this, "userInfo", "ISCHECK", true)) {
-            SharedPrefsUtil.putValue(Login.this, "userInfo", "USER_NAME", account_etv.getText().toString());
-        }
-        if (SharedPrefsUtil.getValue(Login.this, "userInfo", "PWDISCHECK", true)) {
-            SharedPrefsUtil.putValue(Login.this, "userInfo", "PWD", pwd_etv.getText().toString());
-        }
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        dialog.dismiss();
-        finish();
+
+        OkGo.<UserInfo>get(PortIpAddress.Login())
+                .tag(TAG)
+                .params("loginname", account_etv.getText().toString())
+                .params("loginpwd", pwd_etv.getText().toString())
+                .execute(new JsonCallback<UserInfo>(UserInfo.class) {
+                    @Override
+                    public void onSuccess(Response<UserInfo> response) {
+
+                        String tag = response.body().getCode();
+                        String erro = response.body().getMessage();
+                        String token = response.body().getAccess_token();
+                        String username = response.body().getUsername();
+                        String headurl = response.body().getHeadurl();
+                        String userid = response.body().getUserid();
+                        String teamid = response.body().getTeamid();
+
+                        //用户角色类型  1=采矿调度员、2=卡车司机、3=卸矿点操作员  4=采矿班组长
+//                        JPushInterface.setAlias(Login.this, 0, usertype + "");
+
+                        SharedPrefsUtil.putValue(Login.this, "userInfo", "user_token", token);
+                        SharedPrefsUtil.putValue(Login.this, "userInfo", "username", username);
+                        SharedPrefsUtil.putValue(Login.this, "userInfo", "headurl", headurl);
+                        SharedPrefsUtil.putValue(Login.this, "userInfo", "userid", userid);
+                        SharedPrefsUtil.putValue(Login.this, "userInfo", "teamid", teamid);
+
+                        if (tag.equals(PortIpAddress.SUCCESS_CODE)) {
+                            if (SharedPrefsUtil.getValue(Login.this, "userInfo", "ISCHECK", true)) {
+                                SharedPrefsUtil.putValue(Login.this, "userInfo", "USER_NAME", account_etv.getText().toString());
+                            }
+                            //保存密码
+                            SharedPrefsUtil.putValue(Login.this, "userInfo", "USER_PWD", pwd_etv.getText().toString());
+                            startActivity(new Intent(Login.this, MainActivity.class));
+                            finish();
+                        } else {
+                            ShowToast.showShort(Login.this, erro);
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Response<UserInfo> response) {
+                        super.onError(response);
+                        ShowToast.showShort(Login.this, R.string.connect_err);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();
+                        dialog.dismiss();
+                    }
+                });
     }
 
 }
